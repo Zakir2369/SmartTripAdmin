@@ -7,11 +7,12 @@
     tools:context=".HotelDetailsActivity">
 
     <LinearLayout
-        android:id="@+id/hotelTopbar"
-        android:layout_width="match_parent"
+        android:id="@+id/hotelTopBar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
         android:background="@color/colorPrimary"
         >
@@ -42,9 +43,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@+id/hotelTopbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelTopBar"
         >
 
         <LinearLayout
