@@ -192,7 +192,7 @@
         android:layout_marginTop="30dp"
         >
         <androidx.cardview.widget.CardView
-            android:id="@+id/hotelList"
+            android:id="@+id/registerHotel"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
@@ -200,7 +200,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/registerHotel"
+            app:layout_constraintEnd_toStartOf="@id/hotelList"
             app:cardBackgroundColor="#295752"
             app:cardElevation="5dp"
             >
@@ -228,12 +228,12 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/registerHotel"
+            android:id="@+id/hotelList"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@id/hotelList"
+            app:layout_constraintStart_toEndOf="@id/registerHotel"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/hotelBooking"
@@ -269,7 +269,7 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@id/registerHotel"
+            app:layout_constraintStart_toEndOf="@id/hotelList"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -284,18 +284,17 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_hotel"
+                    android:tint="@color/white" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hotel booking"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_hotel"
-                    android:tint="@color/white" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -311,7 +310,7 @@
         android:layout_marginTop="30dp"
         >
         <androidx.cardview.widget.CardView
-            android:id="@+id/busList"
+            android:id="@+id/registerBus"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
@@ -319,7 +318,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/registerBus"
+            app:layout_constraintEnd_toStartOf="@id/busList"
             app:cardBackgroundColor="@color/teal_700"
             app:cardElevation="5dp"
             >
@@ -347,12 +346,12 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/registerBus"
+            android:id="@+id/busList"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@id/busList"
+            app:layout_constraintStart_toEndOf="@id/registerBus"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/busBooking"
@@ -388,7 +387,7 @@
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@id/registerBus"
+            app:layout_constraintStart_toEndOf="@id/busList"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
