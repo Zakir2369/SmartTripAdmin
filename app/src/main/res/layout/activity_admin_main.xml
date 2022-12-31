@@ -80,7 +80,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/ic_price"
+                        android:src="@drawable/ic_bigbus"
                         />
 
                     <TextView
