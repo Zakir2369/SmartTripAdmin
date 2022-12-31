@@ -8,15 +8,50 @@
     tools:context=".AdminMainActivity">
 
     <LinearLayout
+        android:id="@+id/adminTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        >
+
+        <ImageButton
+            android:id="@+id/profileBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Smart Trip Dasboard"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/bus_hotel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
         android:weightSum="2"
-        android:layout_marginTop="15dp"
         android:padding="10sp"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminTopBar">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -204,7 +239,7 @@
     </LinearLayout>
 
     <LinearLayout
-
+        android:id="@+id/tour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10sp"
@@ -292,12 +327,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tour"
         >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hotel Registration"
+            android:layout_margin="5dp"
             android:backgroundTint="@color/colorPrimary"
             android:textAllCaps="false"/>
 
