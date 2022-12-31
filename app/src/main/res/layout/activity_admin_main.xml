@@ -30,335 +30,472 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Smart Trip Dasboard"
+            android:text="Smart Trip Dashboard"
             android:textColor="#fff"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:paddingVertical="10dp"
+            android:layout_gravity="center"
             />
 
-
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bus_hotel"
+        android:id="@+id/totalOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        android:weightSum="2"
-        android:padding="10sp"
-        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/adminTopBar"
+        android:layout_marginTop="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="11dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#0C4767"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                >
+                <TextView
+                    android:id="@+id/titleTotalHotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:padding="5dp"
+                    android:text="Total Hotel"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:id="@+id/totalHotelCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/titleUser"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="10"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/titleTotalBus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleTotalHotel"
+                    android:padding="5dp"
+                    android:text="Total Bus"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/totalBusCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/titleUser"
+                    app:layout_constraintTop_toBottomOf="@id/totalHotelCount"
+                    android:text="10"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/titleUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleTotalBus"
+                    android:padding="5dp"
+                    android:text="Total User"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/totalUserCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/titleUser"
+                    app:layout_constraintTop_toBottomOf="@id/totalBusCount"
+                    android:text="10"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginStart="10dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminTopBar">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="5dp"
-            android:layout_margin="10sp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            android:layout_weight="1"
-            app:cardElevation="5dp"
-
-
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10sp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:background="@drawable/border"
-                    android:padding="10sp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_bus"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:text="Registered Bus"/>
-
-                    <TextView
-                        android:id="@+id/busNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textColor="@color/white"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="10"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:paddingVertical="10sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Total Booking"/>
-
-                    <TextView
-                        android:id="@+id/totalBusBooking"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textColor="@color/white"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="50"/>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bus"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
-                    android:gravity="center"/>
-
-
-            </LinearLayout>
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="5dp"
-            android:layout_margin="10sp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            android:layout_weight="1"
-            app:cardElevation="5dp"
-
-
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10sp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="10sp"
-                    android:background="@drawable/border"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_hotel2"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Registered Hotel"/>
-
-                    <TextView
-                        android:id="@+id/hotelNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textColor="@color/white"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="10"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:paddingVertical="10sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Total Booking"/>
-
-                    <TextView
-                        android:id="@+id/totalHotelBooking"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textColor="@color/white"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="50"/>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hotel"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/tour"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10sp"
-        app:layout_constraintTop_toBottomOf="@+id/bus_hotel"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="5dp"
-            android:layout_margin="10sp"
-            android:layout_weight="1"
-            app:cardElevation="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/bus_hotel"
-            app:layout_constraintStart_toStartOf="parent"
-
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10sp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingVertical="10sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:text="Tour Package"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="10"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:paddingVertical="10sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Total Booking"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:paddingTop="10sp"
-                        android:textStyle="bold"
-                        android:text="50"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/tour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
-
-        <Button
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hotelList"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Hotel Registration"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:textAllCaps="false"/>
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/registerHotel"
+            app:cardBackgroundColor="#295752"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_hotel"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Hotel"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <Button
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/registerHotel"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Bus Registration"
-            android:backgroundTint="@color/colorPrimary"
-            android:textAllCaps="false"/>
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/hotelList"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/hotelBooking"
+            app:cardBackgroundColor="#295752"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_hotel"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel List"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hotelBooking"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/registerHotel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardBackgroundColor="#295752"
+            app:cardElevation="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel booking"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_hotel"
+                    android:tint="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout1"
+        android:layout_marginTop="30dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/busList"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/registerBus"
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_bus"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Bus"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/registerBus"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/busList"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/busBooking"
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_bus"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bus List"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/busBooking"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/registerBus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_bus"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bus booking"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        android:layout_marginTop="30dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/createTour"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tourList"
+            app:cardBackgroundColor="#13504E"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_tour"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Tour"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tourList"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/createTour"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tourBooking"
+            app:cardBackgroundColor="#13504E"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_tour"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tour List"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tourBooking"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toEndOf="@id/tourList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardBackgroundColor="#13504E"
+            app:cardElevation="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_tour"
+                    android:tint="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tour booking"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 
 
