@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "816323189486",
+    "project_id": "smart-trip-manager",
+    "storage_bucket": "smart-trip-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816323189486:android:4a34486874b28f8fa331ff",
+        "android_client_info": {
+          "package_name": "com.example.smarttripadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816323189486-mc6pfts7j66hvqbcjhha1mg9co9bd8ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSRnz5VibshzaEENE9ClgadknCDweb3v4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816323189486-mc6pfts7j66hvqbcjhha1mg9co9bd8ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816323189486:android:c840af6e19570255a331ff",
+        "android_client_info": {
+          "package_name": "com.rajendra.vacationtourapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816323189486-mc6pfts7j66hvqbcjhha1mg9co9bd8ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSRnz5VibshzaEENE9ClgadknCDweb3v4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816323189486-mc6pfts7j66hvqbcjhha1mg9co9bd8ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

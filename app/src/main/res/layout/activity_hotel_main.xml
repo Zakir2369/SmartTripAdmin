@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HotelMainActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome To"
+        android:textSize="20dp"
+        android:paddingHorizontal="5dp"
+        android:layout_marginTop="10sp"
+        android:paddingVertical="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/hotelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hotel Sea Uttara"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        />
+
+    <TextView
+        android:id="@+id/hotelSummery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10sp"
+        android:background="@color/colorPrimary"
+        android:text="Hotel Summary"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/hotelName"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/hotelSummery">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D4DDE3"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/hotelBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        >
+                        <TextView
+                            android:id="@+id/titleTotalRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:padding="5dp"
+                            android:text="Total Room"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:id="@+id/totalRoomCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/titleAvailableRoom"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="10"
+                            android:padding="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/titleBookedRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/titleTotalRoom"
+                            android:padding="5dp"
+                            android:text="Booked Room"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:id="@+id/totalBookedRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/titleAvailableRoom"
+                            app:layout_constraintTop_toBottomOf="@id/totalRoomCount"
+                            android:text="10"
+                            android:padding="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/titleAvailableRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/titleBookedRoom"
+                            android:padding="5dp"
+                            android:text="Available Room"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:id="@+id/totalAvailableRoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/titleAvailableRoom"
+                            app:layout_constraintTop_toBottomOf="@id/totalBookedRoom"
+                            android:text="10"
+                            android:padding="5dp"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/bccc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/hotelBooking">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10sp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_pending"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending Booking"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/hotelNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10sp"
+                            android:text="10"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10sp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_confirm"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confirm Booking"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10sp"
+                            android:text="10"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:weightSum="3"
+                android:paddingVertical="10sp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/allRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/bccc"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10sp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_hotel" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="All Room"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/allRoom"
+                    app:layout_constraintTop_toTopOf="@+id/allRoom"
+
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10sp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Room"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/allRoom"
+                    app:layout_constraintTop_toTopOf="@+id/allRoom"
+
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10sp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_update" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Update"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="History"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AdminMainActivity">
+
+    <LinearLayout
+        android:id="@+id/bus_hotel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:padding="10sp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            app:cardElevation="5dp"
+
+
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Registered Bus"/>
+
+                    <TextView
+                        android:id="@+id/busNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="10"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="Total Booking"/>
+
+                    <TextView
+                        android:id="@+id/totalBusBooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="50"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bus"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            app:cardElevation="5dp"
+
+
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/pc_hotel"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Registered Hotel"/>
+
+                    <TextView
+                        android:id="@+id/hotelNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="10"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="Total Booking"/>
+
+                    <TextView
+                        android:id="@+id/totalHotelBooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="50"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/bus_hotel"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            app:cardElevation="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/bus_hotel"
+            app:layout_constraintStart_toStartOf="parent"
+
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Tour Package"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="10"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:paddingVertical="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="Total Booking"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:paddingTop="10sp"
+                        android:textStyle="bold"
+                        android:text="50"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotel Registration"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus Registration"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
