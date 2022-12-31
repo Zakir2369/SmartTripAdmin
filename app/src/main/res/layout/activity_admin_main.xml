@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="5dp"
             android:layout_margin="10sp"
+            app:cardBackgroundColor="@color/colorPrimary"
             android:layout_weight="1"
             app:cardElevation="5dp"
 
@@ -74,7 +75,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:paddingVertical="10sp"
+                    android:background="@drawable/border"
+                    android:padding="10sp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -88,6 +90,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:textStyle="bold"
+                        android:textColor="@color/white"
                         android:text="Registered Bus"/>
 
                     <TextView
@@ -95,6 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
+                        android:textColor="@color/white"
                         android:paddingTop="10sp"
                         android:textStyle="bold"
                         android:text="10"/>
@@ -114,6 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:text="Total Booking"/>
 
@@ -122,6 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
+                        android:textColor="@color/white"
                         android:paddingTop="10sp"
                         android:textStyle="bold"
                         android:text="50"/>
@@ -150,6 +156,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="5dp"
             android:layout_margin="10sp"
+            app:cardBackgroundColor="@color/colorPrimary"
             android:layout_weight="1"
             app:cardElevation="5dp"
 
@@ -172,12 +179,13 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/ic_hotel"/>
+                        android:src="@drawable/ic_hotel2"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:text="Registered Hotel"/>
 
@@ -186,6 +194,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
+                        android:textColor="@color/white"
                         android:paddingTop="10sp"
                         android:textStyle="bold"
                         android:text="10"/>
@@ -205,6 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:text="Total Booking"/>
 
@@ -213,6 +223,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
+                        android:textColor="@color/white"
                         android:paddingTop="10sp"
                         android:textStyle="bold"
                         android:text="50"/>
