@@ -17,5 +17,8 @@ public class AddBusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAddBusBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+
     }
 }
