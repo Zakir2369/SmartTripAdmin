@@ -14,8 +14,11 @@ import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -33,6 +36,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,13 +46,11 @@ import java.util.Map;
 public class AddHotelActivity extends AppCompatActivity {
     private ActivityAddHotelBinding binding;
     private Hotel hotel;
-    private ArrayList<Uri> uriList;
-    private ArrayList<String> pdfUrlList;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private FirebaseFirestore db;
     private ProgressDialog progressDialog;
-    private StorageReference storageReference;
     private FirebaseAuth mAuth;
+    private String image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,6 @@ public class AddHotelActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading...");
         progressDialog.setCancelable(false);
-        storageReference = FirebaseStorage.getInstance().getReference();
         setListeners();
     }
 
@@ -73,8 +75,8 @@ public class AddHotelActivity extends AppCompatActivity {
             hotel.hotelDetails = binding.hotelDetails.getText().toString().trim();
             hotel.hotelPhone = binding.hotelPhone.getText().toString().trim();
             hotel.hotelLocation = binding.hotelLocation.getText().toString().trim();
-            hotel.hotelPrice = Double.parseDouble(binding.hotelPrice.getText().toString().trim());
-            hotel.roomCount = Integer.parseInt(binding.hotelTotalRoom.getText().toString().trim());
+            hotel.hotelPrice = binding.hotelPrice.getText().toString().trim();
+            hotel.roomCount = binding.hotelTotalRoom.getText().toString().trim();
             hotel.wifi = binding.wifi.isChecked();
             hotel.ac = binding.ac.isChecked();
             hotel.restaurant = binding.restorant.isChecked();
@@ -83,10 +85,6 @@ public class AddHotelActivity extends AppCompatActivity {
         } catch (Exception e) {
             makeToast(e.getMessage());
         }
-
-
-
-
 
     }
 
@@ -106,7 +104,6 @@ public class AddHotelActivity extends AppCompatActivity {
             }
 
         });
-
         binding.saveInfo.setOnClickListener(view->getHotelInfo());
 
     }
@@ -115,66 +112,45 @@ public class AddHotelActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> pickImage = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), result -> {
                 if(result.getResultCode() == RESULT_OK) {
-                    uriList = new ArrayList<>();
                     assert result.getData() != null;
                     if (result.getData().getClipData() != null) {
-                        ClipData mClipData = result.getData().getClipData();
                         int count = result.getData().getClipData().getItemCount();
                         for (int i = 0; i < count; i++) {
+
                             Uri uri = result.getData().getClipData().getItemAt(i).getUri();
-                            uriList.add(uri);
+                            try{
+                                InputStream inputStream = getContentResolver().openInputStream(uri);
+                                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                                image = encodeImage(bitmap);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
 
                     } else {
                         Uri uri = result.getData().getData();
-                        uriList.add(uri);
+                        try{
+                            InputStream inputStream = getContentResolver().openInputStream(uri);
+                            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                            image = encodeImage(bitmap);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
-
                 }
-                progressDialog.show();
-                uploadImage(uriList);
+
             }
     );
 
-
-
-
-    @SuppressLint("SetTextI18n")
-    private void uploadImage(ArrayList<Uri> uri) {
-        pdfUrlList = new ArrayList<>();
-
-        for(int i=0; i<uri.size(); i++) {
-            final StorageReference filepath = storageReference
-                    .child(
-                            getFileName(uri.get(i))+" "+new Date()
-                    );
-            UploadTask uploadTask = filepath.putFile(uri.get(i));
-
-            int finalI = i+1;
-            uploadTask.addOnProgressListener(snapshot -> {
-                progressDialog.setTitle("Uploading Image "+ finalI);
-                double progress = (100.0 * snapshot.getBytesTransferred()) / snapshot.getTotalByteCount();
-                progressDialog.setMessage("Uploaded "+ (int)progress + "%");
-            }).addOnCompleteListener(task -> {
-                if (task.isSuccessful()){
-                    String pdfUrl = filepath.getName();
-                    pdfUrlList.add(pdfUrl);
-                } else {
-                    makeToast("Failed!");
-                }
-
-                if (finalI==uri.size()){
-                    progressDialog.dismiss();
-                }
-            });
-        }
-
-    }
-
-    private String getFileName(Uri uri) {
-        DocumentFile file = DocumentFile.fromSingleUri(this, uri);
-        assert file != null;
-        return file.getName();
+    private String encodeImage(Bitmap bitmap){
+        int previewWidth = 512;
+        int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
+        Bitmap previewBitmap = Bitmap.createScaledBitmap(bitmap , previewWidth, previewHeight, false);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        previewBitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
+        byte[] bytes = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(bytes, Base64.DEFAULT);
     }
 
     private Boolean checkPermissions(){
@@ -205,25 +181,13 @@ public class AddHotelActivity extends AppCompatActivity {
         hotels.put(Constants.KEY_HOTEL_DINING, hotel.restaurant);
         hotels.put(Constants.KEY_HOTEL_PARKING, hotel.parking);
 
-        for(int i=0; i<pdfUrlList.size(); i++) {
-            hotels.put(Constants.KEY_HOTEL_IMAGE+i, pdfUrlList.get(i));
-        }
+        hotels.put(Constants.KEY_HOTEL_IMAGE, image);
 
 
         db.collection(Constants.KEY_HOTEL_DB)
                 .add(hotels)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        makeToast("Completed!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        makeToast("Failed!");
-                    }
-                });
+                .addOnSuccessListener(documentReference -> makeToast("Successfully added to database."))
+                .addOnFailureListener(e -> makeToast(e.getMessage()));
     }
 
 
@@ -261,21 +225,24 @@ public class AddHotelActivity extends AppCompatActivity {
             }else if(String.valueOf( hotel.roomCount).isEmpty()) {
                 binding.hotelTotalRoom.setError("Enter room number!");
                 return;
-            }else if(uriList.size()<1) {
+            }else if(image.isEmpty()) {
                 makeToast("Select Image");
                 return;
             }
             createHotelUser();
         } catch (Exception e) {
-            Log.d("Afridi", e.getMessage());
+            e.printStackTrace();
         }
 
     }
 
     private void createHotelUser() {
         mAuth.createUserWithEmailAndPassword(hotel.hotelEmail, hotel.hotelPassword)
-                .addOnSuccessListener(authResult -> makeToast("User created."))
+                .addOnSuccessListener(authResult -> {
+                    makeToast("User created.");
+                    addToDatabase();
+                })
                 .addOnFailureListener(e -> makeToast(e.getMessage()));
-        addToDatabase();
+
     }
 }

@@ -193,7 +193,7 @@
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerHotel"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -207,14 +207,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_hotel"
+                    android:src="@drawable/ic_add"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -229,7 +229,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/hotelList"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -243,14 +243,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_hotel"
+                    android:src="@drawable/ic_list"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -265,7 +265,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/hotelBooking"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -282,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:paddingVertical="10dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
@@ -311,7 +311,7 @@
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerBus"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -325,14 +325,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_bus"
+                    android:src="@drawable/ic_add"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -347,7 +347,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/busList"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -361,14 +361,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_bus"
+                    android:src="@drawable/ic_list"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -383,7 +383,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/busBooking"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -397,7 +397,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
@@ -430,7 +430,7 @@
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/createTour"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -444,14 +444,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_tour"
+                    android:src="@drawable/ic_add"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -466,7 +466,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/tourList"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -480,14 +480,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_tour"
+                    android:src="@drawable/ic_list"
                     android:tint="@color/white"
                     />
                 <TextView
@@ -502,7 +502,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/tourBooking"
-            android:layout_width="120dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             app:cardCornerRadius="15dp"
@@ -516,7 +516,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
