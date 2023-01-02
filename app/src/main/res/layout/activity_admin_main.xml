@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background6"
     tools:context=".AdminMainActivity">
 
     <LinearLayout
@@ -46,92 +46,139 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/adminTopBar"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="45dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="11dp"
+            android:layout_marginHorizontal="10dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="5dp"
-            app:cardBackgroundColor="#0C4767"
+            app:cardBackgroundColor="#6C88DD"
 
             >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
+                android:weightSum="4"
                 >
-                <TextView
-                    android:id="@+id/titleTotalHotel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:padding="5dp"
-                    android:text="Total Hotel"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    />
-                <TextView
-                    android:id="@+id/totalHotelCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/titleUser"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="10"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:layout_marginStart="10dp"
-                    />
 
-                <TextView
-                    android:id="@+id/titleTotalBus"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/hotelDash"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/titleTotalHotel"
-                    android:padding="5dp"
-                    android:text="Total Bus"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:id="@+id/totalBusCount"
-                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/newhotel"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Hotel"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:id="@+id/totalHotelCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/busDash"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/titleUser"
-                    app:layout_constraintTop_toBottomOf="@id/totalHotelCount"
-                    android:text="10"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:layout_marginStart="10dp"
-                    />
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/newbus"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Bus"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:id="@+id/totalBusCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userDash"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/user"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total User"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:id="@+id/totalUserCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tourDash"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/newtour"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Packge"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:id="@+id/totalPackageCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/titleUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/titleTotalBus"
-                    android:padding="5dp"
-                    android:text="Total User"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:id="@+id/totalUserCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/titleUser"
-                    app:layout_constraintTop_toBottomOf="@id/totalBusCount"
-                    android:text="10"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:layout_marginStart="10dp"
-                    />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -141,7 +188,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/totalOverview"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -149,14 +196,15 @@
             android:layout_margin="11dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="5dp"
-            app:cardBackgroundColor="#0C4767"
+            app:cardBackgroundColor="#3757A8"
 
             >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
                 android:orientation="horizontal"
                 >
                 <ImageView
@@ -192,7 +240,7 @@
         android:gravity="center"
         android:layout_marginHorizontal="15dp"
         android:paddingVertical="5dp"
-        android:background="@color/teal_200"
+        android:background="@drawable/btn"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,6 +255,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hotel"
         android:layout_marginTop="10dp"
+        android:paddingVertical="10dp"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerHotel"
@@ -218,7 +267,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/hotelList"
-            app:cardBackgroundColor="#295752"
+            app:cardBackgroundColor="#4E69D5"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -254,7 +303,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/hotelBooking"
-            app:cardBackgroundColor="#295752"
+            app:cardBackgroundColor="#4E69D5"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -290,7 +339,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardBackgroundColor="#295752"
+            app:cardBackgroundColor="#4E69D5"
             app:cardElevation="5dp"
             >
 
@@ -328,7 +377,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
         android:paddingVertical="5dp"
-        android:background="@color/teal_200"
+        android:background="@drawable/btn"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -343,6 +392,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bus"
         android:layout_marginTop="10dp"
+        android:paddingVertical="10dp"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerBus"
@@ -354,7 +404,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/busList"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="#3251CF"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -390,7 +440,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/busBooking"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="#3251CF"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -426,7 +476,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="#3251CF"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -465,7 +515,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
         android:paddingVertical="5dp"
-        android:background="@color/teal_200"
+        android:background="@drawable/btn"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -480,6 +530,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tour"
         android:layout_marginTop="10dp"
+        android:paddingVertical="10dp"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/createTour"
@@ -491,7 +542,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tourList"
-            app:cardBackgroundColor="#13504E"
+            app:cardBackgroundColor="#2344CB"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -527,7 +578,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tourBooking"
-            app:cardBackgroundColor="#13504E"
+            app:cardBackgroundColor="#2344CB"
             app:cardElevation="5dp"
             >
             <LinearLayout
@@ -563,7 +614,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardBackgroundColor="#13504E"
+            app:cardBackgroundColor="#2344CB"
             app:cardElevation="5dp"
             >
             <LinearLayout
