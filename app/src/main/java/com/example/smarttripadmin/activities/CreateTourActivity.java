@@ -155,8 +155,6 @@ public class CreateTourActivity extends AppCompatActivity {
         durations = binding.tourDuration.getText().toString().trim();
         overview = binding.tourOverview.getText().toString().trim();
         dayOne = binding.tourDayOne.getText().toString().trim();
-        dayTwo = binding.tourDayTwo.getText().toString().trim();
-        dayThree = binding.tourDayThree.getText().toString().trim();
         tourDate = binding.tourDate.getText().toString().trim();
 
         if(imagesEncodedList.size() == 4) {
@@ -207,16 +205,7 @@ public class CreateTourActivity extends AppCompatActivity {
             binding.tourDayOne.requestFocus();
             return;
         }
-        if(dayTwo.isEmpty()) {
-            binding.tourDayTwo.setError("Enter second day plan.");
-            binding.tourDayTwo.requestFocus();
-            return;
-        }
-        if(dayThree.isEmpty()) {
-            binding.tourDayThree.setError("Enter second day plan.");
-            binding.tourDayThree.requestFocus();
-            return;
-        }
+
         if(imagesEncodedList.size() != 4) {
             makeToast("Select 4 images");
             return;
@@ -234,9 +223,7 @@ public class CreateTourActivity extends AppCompatActivity {
         packageInfo.put(Constants.KEY_TOUR_DURATION, durations);
         packageInfo.put(Constants.KEY_TOUR_DETAILS, overview);
         packageInfo.put(Constants.KEY_TOUR_DATE, tourDate);
-        packageInfo.put(Constants.KEY_TOUR_DAY_ONE, dayOne);
-        packageInfo.put(Constants.KEY_TOUR_DAY_TWO, dayTwo);
-        packageInfo.put(Constants.KEY_TOUR_DAY_THREE, dayThree);
+        packageInfo.put(Constants.KEY_TOUR_DAILY_PLAN, dayOne);
         packageInfo.put(Constants.KEY_TOUR_MAIN_IMAGE, mainImage);
         packageInfo.put(Constants.KEY_TOUR_GALLERY_ONE, imageOne);
         packageInfo.put(Constants.KEY_TOUR_GALLERY_TWO, imageTwo);
