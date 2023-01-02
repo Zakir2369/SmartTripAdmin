@@ -25,11 +25,28 @@ public class Constants {
     public static final String KEY_HOTEL_CHECKOUT = "checkOut";
     public static final String KEY_HOTEL_ROOM_COUNT = "roomCount";
     public static final String KEY_HOTEL_IMAGE = "hotelImage";
-    public static final String KEY_HOTEL_IMAGE1 = "hotelImage1";
-    public static final String KEY_HOTEL_IMAGE2 = "hotelImage2";
-    public static final String KEY_HOTEL_IMAGE3 = "hotelImage3";
     public static final String KEY_HOTEL_PRICE = "hotelPrice";
     public static final String KEY_HOTEL_EMAIL = "hotelEmail";
     public static final String KEY_HOTEL_PASSWORD = "hotelPassword";
     public static final String KEY_HOTEL_PHONE = "hotelPhone";
+
+    //Tour Package
+    public static final String KEY_TOUR_DB = "tourPackage";
+    public static final String KEY_TOUR_NAME = "tourName";
+    public static final String KEY_TOUR_LOCATION = "tourLocation";
+    public static final String KEY_TOUR_DATE = "tourDate";
+    public static final String KEY_TOUR_PRICE = "tourPrice";
+    public static final String KEY_TOUR_DURATION = "tourDuration";
+    public static final String KEY_TOUR_DETAILS = "tourDetails";
+    public static final String KEY_TOUR_DAILY_PLAN = "tourDailyPlan";
+    public static final String KEY_TOUR_DAY_ONE = "tourDayOne";
+    public static final String KEY_TOUR_DAY_TWO = "tourDayTwo";
+    public static final String KEY_TOUR_DAY_THREE = "tourDayThree";
+    public static final String KEY_TOUR_MAIN_IMAGE = "tourMainImage";
+    public static final String KEY_TOUR_GALLERY_ONE = "tourGalleryOne";
+    public static final String KEY_TOUR_GALLERY_TWO = "tourGalleryTwo";
+    public static final String KEY_TOUR_GALLERY_THREE = "tourGalleryThree";
+    public static final String KEY_TOUR_PERSON_COUNT = "tourPersonCount";
+    public static final String KEY_TOUR_PAYMENT = "tourPayment";
+
 }
