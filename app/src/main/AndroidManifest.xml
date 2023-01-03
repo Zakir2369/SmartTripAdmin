@@ -2,12 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,27 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartTripAdmin"
         tools:targetApi="31">
-        <activity
-            android:name=".admin.HotelAdminActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".admin.BusAdminActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activities.HotelDetailsActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".activities.ManageUserActivity"
             android:exported="false">
@@ -138,7 +111,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AdminMainActivity"
+            android:name=".AdminSigninActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -152,7 +125,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AdminSigninActivity"
+            android:name=".AdminMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -165,5 +138,11 @@
                 android:value="" />
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
 </manifest>
