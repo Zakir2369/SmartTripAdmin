@@ -173,9 +173,9 @@
                         android:paddingVertical="10sp">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_pending"/>
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/pending"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -216,9 +216,9 @@
                         android:paddingVertical="10sp">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_confirm"/>
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/confirm"/>
 
                         <TextView
                             android:layout_width="wrap_content"

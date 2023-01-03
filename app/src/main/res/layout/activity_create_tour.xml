@@ -291,7 +291,7 @@
                     android:textAllCaps="false"
                     android:textSize="15sp"
                     android:backgroundTint="@color/colorPrimary"
-                    android:text="Select Image"/>
+                    android:text="Select 4 Images"/>
 
             </LinearLayout>
 

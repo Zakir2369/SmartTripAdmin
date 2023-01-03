@@ -46,4 +46,6 @@ public class Constants {
     public static final String KEY_TOUR_PERSON_COUNT = "tourPersonCount";
     public static final String KEY_TOUR_PAYMENT = "tourPayment";
 
+    //
+
 }
