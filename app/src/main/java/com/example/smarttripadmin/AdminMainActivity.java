@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.smarttripadmin.activities.AddBusActivity;
 import com.example.smarttripadmin.activities.AddHotelActivity;
@@ -28,9 +29,42 @@ public class AdminMainActivity extends AppCompatActivity {
 
         setListeners();
 
+
     }
 
     private void setListeners() {
+
+
+        binding.hotel.setOnClickListener(v->{
+            if(binding.constraintLayout1.getVisibility() == View.GONE) {
+                binding.constraintLayout1.setVisibility(View.VISIBLE);
+                binding.hotelPanel.setImageResource(R.drawable.ic_expand_less);
+            } else {
+                binding.constraintLayout1.setVisibility(View.GONE);
+                binding.hotelPanel.setImageResource(R.drawable.ic_expand_more);
+            }
+        });
+
+        binding.bus.setOnClickListener(v->{
+            if(binding.constraintLayout2.getVisibility() == View.GONE) {
+                binding.constraintLayout2.setVisibility(View.VISIBLE);
+                binding.busPanel.setImageResource(R.drawable.ic_expand_less);
+            } else {
+                binding.constraintLayout2.setVisibility(View.GONE);
+                binding.busPanel.setImageResource(R.drawable.ic_expand_more);
+            }
+        });
+
+        binding.tour.setOnClickListener(v->{
+            if(binding.constraintLayout3.getVisibility() == View.GONE) {
+                binding.constraintLayout3.setVisibility(View.VISIBLE);
+                binding.tourPanel.setImageResource(R.drawable.ic_expand_less);
+            } else {
+                binding.constraintLayout3.setVisibility(View.GONE);
+                binding.tourPanel.setImageResource(R.drawable.ic_expand_more);
+            }
+        });
+
         binding.profileBackBtn.setOnClickListener(view->onBackPressed());
         binding.allUser.setOnClickListener(view->{
             Intent intent = new Intent(AdminMainActivity.this, ManageUserActivity.class);

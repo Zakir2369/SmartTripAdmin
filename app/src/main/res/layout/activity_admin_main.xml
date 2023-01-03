@@ -230,22 +230,52 @@
 
     </LinearLayout>
 
-    <TextView
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hotel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hotel"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginHorizontal="15dp"
-        android:paddingVertical="5dp"
-        android:background="@drawable/btn"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/allUser"
-        />
+        android:background="@drawable/btn"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="15dp"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/hotelImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hotel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white"
+            />
+        <TextView
+            android:id="@+id/hotelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/hotelImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Hotel"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            />
+        <ImageView
+            android:id="@+id/hotelPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expand_more"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout1"
@@ -256,6 +286,7 @@
         app:layout_constraintTop_toBottomOf="@id/hotel"
         android:layout_marginTop="10dp"
         android:paddingVertical="10dp"
+        android:visibility="gone"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerHotel"
@@ -366,23 +397,50 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bus"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout1"
+        android:background="@drawable/btn"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
-        android:paddingVertical="5dp"
-        android:background="@drawable/btn"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout1"
-        />
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/busImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bus24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white"
+            />
+        <TextView
+            android:id="@+id/busText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/busImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Bus"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            />
+        <ImageView
+            android:id="@+id/busPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expand_more"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -393,6 +451,7 @@
         app:layout_constraintTop_toBottomOf="@id/bus"
         android:layout_marginTop="10dp"
         android:paddingVertical="10dp"
+        android:visibility="gone"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/registerBus"
@@ -504,23 +563,50 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tour"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        android:background="@drawable/btn"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
-        android:paddingVertical="5dp"
-        android:background="@drawable/btn"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
-        />
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/tourImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_airplane_ticket"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white"
+            />
+        <TextView
+            android:id="@+id/tourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tourImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Tour Package"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            />
+        <ImageView
+            android:id="@+id/tourPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expand_more"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -531,6 +617,7 @@
         app:layout_constraintTop_toBottomOf="@id/tour"
         android:layout_marginTop="10dp"
         android:paddingVertical="10dp"
+        android:visibility="gone"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/createTour"

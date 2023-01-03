@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.smarttripadmin.admin.BusAdminActivity;
+import com.example.smarttripadmin.admin.HotelAdminActivity;
 import com.example.smarttripadmin.databinding.ActivityLoginBinding;
 import com.example.smarttripadmin.util.Constants;
 import com.example.smarttripadmin.util.PreferenceManager;
@@ -21,9 +23,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
     private PreferenceManager preferenceManager;
-    private String userName, phone, email, password;
+    private String email, password, adminType, phone, userName;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private Boolean isAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,18 +103,41 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            String userName = document.getString(Constants.KEY_USER_NAME);
-                            String email = document.getString(Constants.KEY_EMAIL);
-                            String phone = document.getString(Constants.KEY_PHONE);
+                            userName = document.getString(Constants.KEY_USER_NAME);
+                            email = document.getString(Constants.KEY_EMAIL);
+                            phone = document.getString(Constants.KEY_PHONE);
+                            isAdmin = document.getBoolean(Constants.KEY_IS_ADMIN);
 
-                            makeToast("Successfully Logged In");
-                            preferenceManager.putSting(Constants.KEY_EMAIL, email);
-                            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED, true);
-                            preferenceManager.putSting(Constants.KEY_USER_NAME, userName);
-                            preferenceManager.putSting(Constants.KEY_PHONE, phone);
-                            Intent intent = new Intent(this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+
+                            if(isAdmin!=null && isAdmin) {
+                                adminType = document.getString(Constants.KEY_ADMIN_TYPE);
+                                if(adminType!=null)  {
+                                    makeToast("Successfully Logged In");
+                                    preferenceManager.putSting(Constants.KEY_EMAIL, email);
+                                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED, true);
+                                    preferenceManager.putSting(Constants.KEY_USER_NAME, userName);
+                                    preferenceManager.putSting(Constants.KEY_PHONE, phone);
+
+                                    if(adminType.equals("super")) {
+                                        Intent intent = new Intent(this, AdminMainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else if(adminType.equals("bus")) {
+                                        Intent intent = new Intent(this, BusAdminActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else if(adminType.equals("hotel")) {
+                                        Intent intent = new Intent(this, HotelAdminActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
+                                makeToast("Something went to wrong.");
+                                mAuth.signOut();
+                            } else {
+                                makeToast("Only for admin login");
+                                mAuth.signOut();
+                            }
 
                         }
                     } else {

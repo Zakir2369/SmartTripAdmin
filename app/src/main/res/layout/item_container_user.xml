@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/card_bg"
+    android:background="@drawable/border"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="4dp">
 
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userImg"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:layout_marginStart="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CornerSize50Percent"
         app:srcCompat="@drawable/ic_person" />
 
     <TextView
@@ -26,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
         android:textSize="17sp"
         android:text="User Name"
         app:layout_constraintStart_toEndOf="@+id/userImg"
@@ -59,31 +59,11 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/phoneicon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_phone"
-        app:layout_constraintStart_toStartOf="@+id/hoteList_linear"
-        app:layout_constraintTop_toBottomOf="@+id/hoteList_linear"
-        />
-
-    <TextView
-        android:id="@+id/userPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="+8801771856248"
-        android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/phoneicon"
-        app:layout_constraintTop_toTopOf="@+id/phoneicon"
-        />
-
 
     <ImageView
         android:id="@+id/hotelList_sideimage"
         android:layout_width="37dp"
-        android:layout_height="95dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

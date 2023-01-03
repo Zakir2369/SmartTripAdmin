@@ -1,7 +1,7 @@
 package com.example.smarttripadmin.util;
 
 public class Constants {
-    public static final String KEY_USER_DB = "userDb";
+    public static final String KEY_USER_DB = "users";
     public static final String KEY_PREFERENCES_NAME = "sharedPreference";
     public static final String KEY_USER_NAME = "userName";
     public static final String KEY_PASSWORD = "password";
@@ -10,6 +10,10 @@ public class Constants {
     public static final String KEY_PHONE = "phone";
     public static final String KEY_USER_ID = "userId";
     public static final String KEY_REG_DATE = "registrationDate";
+    public static final String KEY_USER_IMAGE = "userImage";
+    public static final String KEY_IS_ADMIN = "isAdmin";
+    public static final String KEY_ADMIN_TYPE = "adminType";
+
 
     //Hotel Booking
     public static final String KEY_HOTEL_DB = "hotelDb";
